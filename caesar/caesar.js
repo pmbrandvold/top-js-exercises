@@ -9,7 +9,7 @@ var caesar = function(string, cypher) {
       encrypted.push(char);
     }
   });
-return encrypted.toString();
+return encrypted.join('');
 }
 
 module.exports = caesar
