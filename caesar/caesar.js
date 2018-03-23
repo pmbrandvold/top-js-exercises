@@ -1,6 +1,9 @@
 var caesar = function(string, cypher) {
   const phrase = Array.from(string);
   let encrypted = [];
+  if (cypher < 0) {
+    cypher = cypher + 26;
+  }
   phrase.forEach(char => {
     if (char >= "A" && char <= "Z") {
       char = (((char.charCodeAt() - 65) + cypher) % 26) + 65;
