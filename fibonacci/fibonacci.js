@@ -1,4 +1,7 @@
 var fibonacci = function(number) {
+  while (number < 0) {
+    return 'OOPS';
+  }
   var sequence = [];
   var newNumber = 1;
   sequence.push(newNumber);
