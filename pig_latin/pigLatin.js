@@ -1,12 +1,12 @@
 function translate(string) {
-	var vowels = ['a','e','i','o','u'];
+	var vowels = ['a','e','i','o'];
 	var phrase = string.split(' ');
 	phrase.forEach(word => {
 		var letters = Array.from(word);
 		console.log(letters);
-		letters.forEach(letter => {
+		letters.forEach((letter, index) => {
 			if (vowels.indexOf(letter) !== -1) {
-				console.log(letter);
+				console.log(letter + ' : ' + index);
 			}
 		});
 	});
