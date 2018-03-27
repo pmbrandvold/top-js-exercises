@@ -6,16 +6,18 @@ function translate(string) {
 		var letters = Array.from(word);
 		var beforeVowel = [];
 		var afterVowel = [];
+		var vowelIndex = 0;
+		for (var i = 0; i < letters.length; i++) {
+			if (vowels.indexOf(letters[i]) !== -1) {
+				var vowelIndex = i;
+				break;
+			}
+		}
 		letters.forEach((letter, index) => {
-			if (vowels.indexOf(letter) !== -1) {
-				var vowelIndex = index;
-				letters.forEach((letter, index) => {
-					if (index < vowelIndex) {
-						beforeVowel.push(letter);
-					} else {
-						afterVowel.push(letter);
-					}
-				});
+			if (index < vowelIndex) {
+				beforeVowel.push(letter);
+			} else {
+				afterVowel.push(letter);
 			}
 		});
 		var newWord = afterVowel.join('') + beforeVowel.join('') + 'ay';
